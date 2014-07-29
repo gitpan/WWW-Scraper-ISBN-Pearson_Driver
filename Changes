@@ -1,5 +1,10 @@
-Revision history for WWW::Scraper::ISBN::Pearson_Driver
-=======================================================
+Revision history for WWW-Scraper-ISBN-Pearson_Driver
+====================================================
+
+0.21    2014-07-29
+        - fixed distribution name in META.
+        - upgrade to WWW-Scraper-ISBN-1.00.
+        - provide html in book details.
 
 0.20    2013-11-27
         - META updates.

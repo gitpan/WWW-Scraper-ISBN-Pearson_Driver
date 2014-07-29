@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use vars qw($VERSION @ISA);
-$VERSION = '0.20';
+$VERSION = '0.21';
 
 #--------------------------------------------------------------------------
 
@@ -147,6 +147,8 @@ sub search {
         $data->{$_} =~ s/\s+$//; 
     }
 
+    my $uri = $mech->uri(); #DETAIL . $data->{bookid};
+
 	my $bk = {
 		'ean13'		    => $data->{isbn13},
 		'isbn13'		=> $data->{isbn13},
@@ -154,7 +156,7 @@ sub search {
 		'isbn'			=> $data->{isbn13},
 		'author'		=> $data->{author},
 		'title'			=> $data->{title},
-		'book_link'		=> $mech->uri(),   #DETAIL . $data->{bookid},
+		'book_link'		=> "$uri",
 		'image_link'	=> $data->{image},
 		'thumb_link'	=> $data->{thumb},
 		'description'	=> $data->{description},
@@ -164,7 +166,8 @@ sub search {
 		'pages'		    => $data->{pages},
 		'weight'		=> $data->{weight},
 		'width'		    => $data->{width},
-		'height'		=> $data->{height}
+		'height'		=> $data->{height},
+        'html'          => $html
 	};
 
 #use Data::Dumper;
@@ -210,7 +213,7 @@ be forthcoming, please feel free to (politely) remind me.
 
 =head1 COPYRIGHT & LICENSE
 
-  Copyright (C) 2004-2013 Barbie for Miss Barbell Productions
+  Copyright (C) 2004-2014 Barbie for Miss Barbell Productions
 
   This distribution is free software; you can redistribute it and/or
   modify it under the Artistic Licence v2.
